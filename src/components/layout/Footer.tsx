@@ -17,7 +17,7 @@ export const Footer = () => {
                             </div>
                             <div className='flex flex-col'>
                                 <span className='text-lg font-bold text-primary'>Geriacare</span>
-                                <span className='text-sm text-muted-foreground'>geriacare.in</span>
+                                
                             </div>
                         </Link>
                         <p className='text-sm lg:text-base text-muted-foreground leading-relaxed'>
@@ -70,16 +70,16 @@ export const Footer = () => {
                             <div className='flex items-center space-x-3'>
                                 <MapPin className='h-5 w-5 text-primary flex-shrink-0' />
                                 <span className='text-sm lg:text-base text-muted-foreground'>
-                                    Mumbai, Maharashtra, India
+                                    Bengaluru, India
                                 </span>
                             </div>
                             <div className='flex items-center space-x-3'>
                                 <Phone className='h-5 w-5 text-primary flex-shrink-0' />
                                 <a
-                                    href='tel:+919876543210'
+                                    href='tel:+917994470688'
                                     className='text-sm lg:text-base text-muted-foreground hover:text-primary transition-colors'
                                 >
-                                    +91 98765 43210
+                                    +91 79944 70688
                                 </a>
                             </div>
                             <div className='flex items-center space-x-3'>
@@ -94,7 +94,7 @@ export const Footer = () => {
                             <div className='flex items-center space-x-3'>
                                 <MessageCircle className='h-5 w-5 text-green-600 flex-shrink-0' />
                                 <a
-                                    href='https://wa.me/+919876543210'
+                                    href='https://wa.me/+917994470688'
                                     target='_blank'
                                     rel='noopener noreferrer'
                                     className='text-sm lg:text-base text-green-600 hover:text-green-700 transition-colors font-medium'
@@ -108,7 +108,7 @@ export const Footer = () => {
 
                 <div className='mt-8 pt-6 border-t'>
                     <div className='flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0'>
-                        <p className='text-sm text-muted-foreground'>© 2024 Geriacare.in. All rights reserved.</p>
+                        <p className='text-sm text-muted-foreground'>© 2026 Geriacare.in. All rights reserved.</p>
                         <p className='text-sm text-muted-foreground text-center sm:text-right'>
                             <strong>Disclaimer:</strong> This website provides general guidance only. Not a substitute
                             for professional medical advice.
