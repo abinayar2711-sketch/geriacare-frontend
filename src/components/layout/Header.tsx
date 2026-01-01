@@ -1,4 +1,4 @@
-import { useState } from 'react';
+ns & import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useMutation } from '@tanstack/react-query';
 import { Button } from '@/components/ui/button';
@@ -74,7 +74,7 @@ export const Header = () => {
                         <div className='flex flex-col'>
                             <span className='text-lg lg:text-xl font-bold text-primary'>Geriacare</span>
                             <span className='text-xs lg:text-sm text-muted-foreground hidden sm:block'>
-                                Trusted care for seniors 70+
+                                Observations and Opinions
                             </span>
                         </div>
                     </Link>
