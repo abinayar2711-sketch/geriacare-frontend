@@ -81,13 +81,13 @@ export const Disclaimer = () => {
                 </p>
                 <div className='flex flex-col sm:flex-row gap-4 justify-center items-center'>
                     <a
-                        href='https://wa.me/+919876543210'
+                        href='https://wa.me/+917994470688'
                         target='_blank'
                         rel='noopener noreferrer'
                         className='flex items-center space-x-2 text-green-600 hover:text-green-700 font-medium'
                     >
                         <Phone className='h-5 w-5' />
-                        <span>WhatsApp: +91 98765 43210</span>
+                        <span>WhatsApp: +91 7994470688</span>
                     </a>
                     <span className='text-muted-foreground hidden sm:block'>•</span>
                     <a
