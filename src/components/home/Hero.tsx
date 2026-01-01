@@ -14,14 +14,14 @@ export const Hero = () => {
                         </div>
                         <div className='text-left'>
                             <h1 className='text-2xl lg:text-4xl font-bold text-primary'>Geriacare</h1>
-                            <p className='text-base lg:text-lg text-muted-foreground'>geriacare.in</p>
+                            
                         </div>
                     </div>
 
                     <h2 className='text-2xl sm:text-3xl lg:text-5xl font-bold text-foreground leading-tight max-w-4xl mx-auto'>
-                        <span className='text-primary'>Observation & Opinions</span>
+                        <span className='text-primary'>Observation and Opinions</span>
                         <br />
-                        Trusted domestic care guidance for seniors 70+
+                        
                     </h2>
 
                     <p className='text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed'>
