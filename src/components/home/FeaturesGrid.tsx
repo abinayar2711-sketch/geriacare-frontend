@@ -95,7 +95,7 @@ export const FeaturesGrid = () => {
                     </p>
                     <div className='pt-4'>
                         <a
-                            href='https://wa.me/+919876543210'
+                            href='https://wa.me/+917994470688'
                             target='_blank'
                             rel='noopener noreferrer'
                         >
