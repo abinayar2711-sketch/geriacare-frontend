@@ -169,6 +169,114 @@ export const AboutContent = () => {
                     </Card>
                 </div>
             </section>
+            <section className="mt-16">
+  <h2 className="text-3xl font-bold text-primary mb-8">
+    Our Team
+  </h2>
+
+  <div className="space-y-6">
+    {/* Team Member */}
+    <div className="flex items-start gap-4 p-4 rounded-lg border">
+      <img
+        src="/team/naveen.jpg"
+        alt="Naveen Nath Kallath Narayanan"
+        className="h-14 w-14 rounded-full object-cover"
+      />
+      <div>
+        <h3 className="text-lg font-semibold">
+          Naveen Nath Kallath Narayanan
+        </h3>
+        <p className="text-sm text-muted-foreground">
+          Operations & Care Oversight
+        </p>
+        <p className="text-sm mt-1">
+          Experienced in nursing homes in the UK, with an MBA in International Business from the United Kingdom.
+        </p>
+      </div>
+    </div>
+
+    <div className="flex items-start gap-4 p-4 rounded-lg border">
+      <img
+        src="/team/abinaya.jpg"
+        alt="Abinaya Radhakrishnan"
+        className="h-14 w-14 rounded-full object-cover"
+      />
+      <div>
+        <h3 className="text-lg font-semibold">
+          Abinaya Radhakrishnan
+        </h3>
+        <p className="text-sm text-muted-foreground">
+          Administration & Technology
+        </p>
+        <p className="text-sm mt-1">
+          Information Technology professional with an Executive M.Tech in Artificial Intelligence and Machine Learning from IIT Jammu.
+        </p>
+      </div>
+    </div>
+
+    <div className="flex items-start gap-4 p-4 rounded-lg border">
+      <img
+        src="/team/shamili.jpg"
+        alt="Shamili Unnikrishnan"
+        className="h-14 w-14 rounded-full object-cover"
+      />
+      <div>
+        <h3 className="text-lg font-semibold">
+          Shamili Unnikrishnan
+        </h3>
+        <p className="text-sm text-muted-foreground">
+          Operations
+        </p>
+        <p className="text-sm mt-1">
+          MBA in HR and Marketing.
+        </p>
+      </div>
+    </div>
+
+    <div className="flex items-start gap-4 p-4 rounded-lg border">
+      <img
+        src="/team/siya.jpg"
+        alt="Siya Santosh Rayu Desai"
+        className="h-14 w-14 rounded-full object-cover"
+      />
+      <div>
+        <h3 className="text-lg font-semibold">
+          Siya Santosh Rayu Desai
+        </h3>
+        <p className="text-sm text-muted-foreground">
+          Physiotherapy & Osteopathy (Advisory)
+        </p>
+        <p className="text-sm mt-1">
+          Bachelor’s in Physiotherapy and MSc in Osteopathy.
+          <br />
+          <span className="italic text-xs text-muted-foreground">
+            (Non-clinical, advisory role)
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <div className="flex items-start gap-4 p-4 rounded-lg border">
+      <img
+        src="/team/mamatha.jpg"
+        alt="Mamatha Gurumoorthy"
+        className="h-14 w-14 rounded-full object-cover"
+      />
+      <div>
+        <h3 className="text-lg font-semibold">
+          Mamatha Gurumoorthy
+        </h3>
+        <p className="text-sm text-muted-foreground">
+          HR & Hiring
+        </p>
+        <p className="text-sm mt-1">
+          MBA in Good Governance.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
         </div>
     );
 };
