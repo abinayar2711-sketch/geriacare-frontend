@@ -13,7 +13,7 @@ export const Hero = () => {
                             <Heart className='h-8 w-8 lg:h-10 lg:w-10 text-primary-foreground fill-current' />
                         </div>
                         <div className='text-left'>
-                            <h1 className='text-2xl lg:text-5xl font-bold text-primary'>Geriacare</h1>
+                            <h2 className='text-2xl lg:text-5xl font-bold text-primary'>Geriacare</h2>
                             
                         </div>
                     </div>
