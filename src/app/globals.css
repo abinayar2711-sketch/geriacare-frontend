@@ -1,0 +1,333 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #1b1a17;
+  --color-muted: #6b6560;
+  --color-line: #e5e0d8;
+  --color-paper: #faf8f5;
+  --color-surface: #fffefb;
+
+  --color-accent: #7a3b5e;
+  --color-accent-soft: #f3e4ed;
+
+  --color-warm: #8a5a2b;
+  --color-warm-soft: #f2e7db;
+
+  --color-crisis: #b91c1c;
+  --color-crisis-soft: #fef2f2;
+
+  --color-sage: #7a9e7e;
+  --color-sage-soft: #e8ece6;
+
+  /* Helix — warm rose-gold for burgundy theme */
+  --color-helix: #a0615a;
+  --color-helix-soft: #d4917a;
+
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background:
+    radial-gradient(60rem 32rem at 50% -12rem, #ffffff 0%, rgba(255, 255, 255, 0) 70%),
+    var(--color-paper);
+  background-attachment: fixed;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.prose-body p {
+  margin-bottom: 0.9rem;
+  line-height: 1.75;
+}
+.prose-body strong {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+::selection {
+  background: var(--color-accent-soft);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Golden theme — opt-in dark burgundy palette for landing hero,
+ * ask page, etc. Re-assigns all tokens so every token-driven component
+ * retones automatically.
+ * ------------------------------------------------------------------ */
+.theme-golden {
+  --color-ink: #f4ecdb;
+  --color-muted: #c8b89f;
+  --color-line: #5a3a3a;
+  --color-paper: #2a1520;
+  --color-surface: #3a2030;
+  --color-accent: #d4a853;
+  --color-accent-soft: #3a2030;
+  --color-sage: #b8c4a8;
+  --color-sage-soft: #3a2828;
+  color: var(--color-ink);
+  background:
+    radial-gradient(60rem 32rem at 50% -10%, #3a2030 0%, rgba(58, 32, 48, 0) 60%),
+    linear-gradient(168deg, #1e0e18 0%, #2a1520 46%, #1a1512 100%);
+}
+
+.theme-golden input,
+.theme-golden textarea {
+  box-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+.theme-golden input:focus,
+.theme-golden textarea:focus {
+  box-shadow: 0 0 0 3px rgba(212, 168, 83, 0.28);
+}
+
+/* ------------------------------------------------------------------ *
+ * Helix watermark — mobile hero background
+ * ------------------------------------------------------------------ */
+.helix-watermark {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 60px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  opacity: 0.18;
+  --spin: 8s;
+  --drop: 20s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .helix-watermark {
+    display: none;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Full-bleed helper
+ * ------------------------------------------------------------------ */
+.fullbleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+/* ------------------------------------------------------------------ *
+ * Drifting props
+ * ------------------------------------------------------------------ */
+.prop-field {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.prop-float {
+  position: absolute;
+  animation: prop-float var(--dur, 15s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+  will-change: transform;
+}
+
+@keyframes prop-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--rot0, -6deg));
+  }
+  50% {
+    transform: translateY(calc(-1 * var(--rise, 26px))) rotate(var(--rot1, 6deg));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .prop-float {
+    animation: none;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Heroes marquee
+ * ------------------------------------------------------------------ */
+.marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.marquee__track {
+  display: flex;
+  width: max-content;
+  gap: 1.25rem;
+  animation: marquee-scroll 42s linear infinite;
+}
+
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  to {
+    transform: translateX(calc(-50% - 0.625rem));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track {
+    animation: none;
+  }
+  .marquee {
+    overflow-x: auto;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Helix rails
+ * ------------------------------------------------------------------ */
+.helix-rail {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 56px;
+  z-index: 0;
+  pointer-events: none;
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .helix-rail {
+    display: block;
+  }
+}
+
+.helix-rail--left {
+  left: calc(50% - 30rem);
+}
+.helix-rail--right {
+  right: calc(50% - 30rem);
+}
+
+.helix-strand {
+  position: relative;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+  perspective: 220px;
+}
+
+.helix-rung {
+  position: relative;
+  height: 3px;
+  transform-style: preserve-3d;
+  animation-name: helix-spin, helix-pulse;
+  animation-duration: var(--spin), var(--drop);
+  animation-timing-function: linear, ease-out;
+  animation-iteration-count: infinite, infinite;
+  animation-delay: calc(var(--i) * -0.3s), calc(var(--i) / var(--n) * var(--drop));
+  opacity: 0.72;
+}
+
+.helix-rail--right .helix-rung {
+  animation-direction: reverse, normal;
+}
+
+.helix-rung::before {
+  content: "";
+  position: absolute;
+  inset: 0 6px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-helix-soft) 30%,
+    var(--color-helix-soft) 70%,
+    transparent
+  );
+  opacity: 0.55;
+}
+
+.helix-dot {
+  position: absolute;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-helix);
+  transform: translateY(-50%);
+}
+.helix-dot--a {
+  left: 0;
+}
+.helix-dot--b {
+  right: 0;
+}
+
+@keyframes helix-spin {
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes helix-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    filter: none;
+  }
+  1.8% {
+    opacity: 1;
+    filter: brightness(1.5) drop-shadow(0 0 5px var(--color-helix-soft));
+  }
+  6% {
+    opacity: 0.5;
+    filter: none;
+  }
+}
+
+.helix-ball {
+  position: absolute;
+  left: 50%;
+  width: 13px;
+  height: 13px;
+  margin-left: -6.5px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 34% 32%, #ffffff, var(--color-helix) 78%);
+  box-shadow: 0 0 14px 3px rgba(160, 97, 90, 0.35);
+  animation: helix-drop var(--drop) linear infinite;
+}
+
+@keyframes helix-drop {
+  0% {
+    top: -1.5%;
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  93% {
+    opacity: 1;
+  }
+  100% {
+    top: 101%;
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .helix-rail {
+    display: none;
+  }
+}
