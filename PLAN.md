@@ -1,97 +1,112 @@
-# Geriacare - Project Recovery Plan
+# Geriacare — Final Project State
 
-## What We Built So Far
-Full Next.js Q&A platform for geriatric care (Reddit-like) at `/home/abinaya/vime/gcare/gcare/`
-- Tech: Next.js 15 + Drizzle ORM + Neon PostgreSQL + Tailwind CSS v4 + NextAuth (Google OAuth)
-- Adapted from `/home/abinaya/Transfer/Workspace/saturdayHustle/sangha` (spiritual Q&A forum)
-- DB shares sangha's Neon PostgreSQL — both schemas coexist
+## What We Built
+Full Next.js elder care Q&A platform at `/home/abinaya/vime/gcare/gcare/`
+- **Live at**: https://geriacare.in (via Vercel)
+- **GitHub**: https://github.com/abinayar2711-sketch/geriacare-frontend
+- **Tech**: Next.js 15 + Drizzle ORM + Neon PostgreSQL + Tailwind CSS v4 + NextAuth (Google OAuth)
+- **Adapted from**: `/home/abinaya/Transfer/Workspace/saturdayHustle/sangha` (spiritual Q&A forum)
 
-### Completed Pages & Features
-- `/` — Combined landing + feed (hero, stats, featured questions/articles, "How It Works", latest feed)
-- `/ask` — Structured question form (patientAge, gender, condition, medications, city, urgency, careSetting, relation)
-- `/post/[id]` — Thread view with patient info + answers + comments + endorsements + crisis detection
-- `/articles` — Expert articles listing
-- `/about` — Mission, team, guidelines, medical disclaimer
-- `/caregivers` — Searchable caregiver listings with city/spec filters
-- `/contact` — Feedback form, WhatsApp link, medical disclaimer
-- `/mod` — Moderator panel (review queue, flagged posts, users, feedback messages, caregiver management)
-- `/held` — Crisis post held page
-- `/signin` — Google sign-in
-- Loading skeleton on home page for instant perceived load
-- 12 DB tables (10 original + caregivers + feedback), 18 geriatric care tags seeded, sample data seeded
-- Server actions: createQuestion, createArticle, createAnswer, createComment, toggleVote, endorse, flagPost, moderate, setRole, submitFeedback, createCaregiver, updateCaregiver, deleteCaregiver
-- Crisis detection with 12 elder care patterns + Indian helplines
+## Branding
+- **Tagline**: "Observations and Opinions"
+- **Sub-tagline**: "Authentic, non-clinical guidance for living well, every day."
+- **Hero headline**: "Observations and Opinions"
+- **Color palette**: Warm burgundy (#2a1520) + sage (#7a9e7e) + gold (#d4a853)
+- **Accent**: #7a3b5e (burgundy for buttons, badges across all pages)
+- **Contact**: WhatsApp 9446945807, Email support@geriacare.in
 
-### Performance Fix Applied
-- ISR with `revalidate = 30` on home page (page regenerates every 30s, not on every request)
-- Parallelized all home page queries (Promise.all for posts, counts, tags)
-- Added `idle_timeout: 20` and `connect_timeout: 10` to postgres connection
-- Loading skeleton (`src/app/loading.tsx`) for instant page render while DB responds
-
-## What's Been Done
-- [x] Fix the Performance Issue — ISR + loading skeleton
-- [x] Landing Page Redesign — hero, stats bar, featured questions, featured articles, "How It Works"
-- [x] Build `/about` page — mission, guidelines, medical disclaimer
-- [x] Build `/caregivers` page — searchable listings with filters + DB table
-- [x] Build `/contact` page — feedback form + WhatsApp link + DB table
-- [x] Admin caregiver management in `/mod` — add/remove caregivers, view feedback
-- [x] Nav updated with new links, footer updated with links
-
-## What Needs To Be Done Next
-
-### 1. Run Migration (HIGH PRIORITY)
-Migration script is ready but needs DB credentials:
-```bash
-npx tsx scripts/migrate.ts
+## Pages (Route Map)
 ```
-This creates:
-- `caregiver` table
-- `feedback` table
-- Seeds 4 sample caregivers
-
-### 2. Polish & Future Enhancements
-- `/caregivers` page could benefit from pagination if listings grow
-- Contact page WhatsApp number needs updating (currently placeholder: 919999999999)
-- Consider adding email notifications for feedback submissions
-- Consider adding search to the home feed
-- Consider adding user profiles at `/profile/[id]`
-
-## Full Route Map (current)
-```
-/               → Combined landing + feed (redesigned with ISR + loading skeleton)
-/ask            → Ask question (structured form)
-/post/[id]      → Thread view
-/articles       → Expert articles
-/about          → About page (mission, guidelines, disclaimer)
-/caregivers     → Searchable caregiver listings (with filters)
-/contact        → Contact / feedback (form + WhatsApp)
-/mod            → Moderator panel (review, users, feedback, caregivers)
+/               → Redirects to /landing
+/landing        → Dark hero, DNA helix rails, elder care SVG props, portrait, expert marquee, CTA
+/feed           → Forum feed (moved from /)
+/ask            → Ask question (structured form + loading skeleton)
+/post/[id]      → Thread view with patient info, answers, comments, endorsements
+/articles       → Expert articles listing
+/about          → Mission, philosophy, community guidelines, medical disclaimer
+/caregivers     → Searchable listings with city/spec filters (mod-only access)
+/contact        → Feedback form, WhatsApp link, email link, medical disclaimer
+/mod            → Moderator dashboard (review queue, flagged posts, users, feedback, caregiver mgmt, article publishing)
 /signin         → Google sign-in
 /held           → Crisis post held page
+/inauguration.html → Ribbon-cutting page → redirects to geriacare.in
 ```
 
+## Expert Marquee (Landing Page)
+- Dr. Rajashekaran — Pain Management, Trivandrum
+- Dr. Pranav Jain — M.B.B.S, MD
+- Amogh Venkatanarayan — Verified Expert
+- Srinivasan — Technical Advisor
+- George Varghese — Business Strategist, Geriacare
+- Gangaluru — Advisory Board
+- Prakash George — Physiotherapist
+
+## DB Schema (12 tables)
+`user`, `post`, `tag`, `postTag`, `vote`, `endorsement`, `flag`, `comment` (sangha) + `caregiver`, `feedback` (geriacare)
+
+## Content in DB
+### Questions (3)
+1. "How this forum works, and what it isn't for" — curated for Geriacare
+2. "How to prevent falls for an 85-year-old mother at home?"
+3. "Father with dementia refusing to eat — what can we try?"
+
+### Article (1)
+- "10 Signs Your Elderly Parent Needs Professional Care" (memory gaps updated: train/plane, familiar places)
+
+### Tags (20 geriacare-relevant)
+About this forum, Bathing & Hygiene, Body & health, Caregiver Stress, Communication, Community, Daily Care, Dementia & Memory, Emergency, General Care, Legal & Financial, Medication, Mental Health, Mobility, Nutrition, Pain Management, Post-Surgery, Rehabilitation, Safety, Sleep
+
+## DB Users
+- Expert (email: priya@example.com) — name shows as "Expert"
+- Rajesh Kumar (email: rajesh@example.com) — family role
+- Abinaya Radhakrishnan (abinayar2711@gmail.com) — moderator
+- Admin (admin@geriacare.in) — moderator
+- Sangha placeholder users (seed-teacher, seed-seeker, seed-host)
+
+## Performance
+- ISR with `revalidate = 30` on home page
+- Loading skeletons on `/` and `/ask` (wheelchair SVG)
+- Parallelized DB queries (Promise.all)
+- `idle_timeout: 20`, `connect_timeout: 10` on postgres connection
+
+## Vercel Deployment
+- **Framework**: Next.js (set in vercel.json)
+- **Env vars needed**: DATABASE_URL, AUTH_SECRET, AUTH_GOOGLE_ID, AUTH_GOOGLE_SECRET
+- Auto-deploys on push to main
+
 ## Key Files
+- `src/app/landing/page.tsx` — Landing page (hero, props, marquee, CTA)
+- `src/app/globals.css` — Full theme (burgundy/sage palette, .theme-golden, helix CSS, prop-float, marquee)
+- `src/components/HelixRails.tsx` — DNA helix rails
+- `src/app/layout.tsx` — Root layout (nav, footer, HelixRails)
+- `src/app/mod/page.tsx` — Moderator dashboard (article publishing added)
+- `src/app/contact/page.tsx` — Contact (WhatsApp + email + form)
+- `src/app/about/page.tsx` — About page (philosophy, guidelines)
+- `src/app/caregivers/page.tsx` — Caregiver listings (mod-only)
+- `src/app/ask/AskForm.tsx` — Ask question form
+- `src/app/ask/loading.tsx` — Loading skeleton with wheelchair SVG
+- `src/app/loading.tsx` — Global loading skeleton
+- `src/app/api/auth/[...nextauth]/route.ts` — NextAuth API route
+- `src/auth.ts` — NextAuth config (Google provider, DrizzleAdapter)
 - `src/db/schema.ts` — Drizzle schema (12 tables)
-- `src/lib/actions.ts` — all server actions
-- `src/lib/crisis.ts` — elder care crisis detection
-- `src/lib/tags.ts` — 18 geriatric care tag definitions
-- `src/lib/ui.ts` — shared Tailwind class strings
-- `src/auth.ts` — NextAuth config
-- `src/db/index.ts` — DB connection (idle_timeout, connect_timeout)
-- `src/app/page.tsx` — home feed (ISR, parallelized queries, landing redesign)
-- `src/app/loading.tsx` — loading skeleton
-- `src/app/globals.css` — warm & caring theme
-- `src/app/mod/page.tsx` — moderator dashboard (with caregiver mgmt)
+- `src/lib/actions.ts` — All server actions (14 actions)
+- `src/lib/ui.ts` — Shared Tailwind class strings
 - `scripts/migrate.ts` — DB migration script
-- `.env` — Neon DB + auth secrets
+- `scripts/seed.ts` — DB seed script
+- `scripts/cleanup.ts` — Cleanup script
+- `inauguration.html` — Ribbon-cutting page → redirects to geriacare.in
+- `vercel.json` — Vercel config (Next.js framework)
+- `.env.example` — Env var template
+- `PLAN.md` — This file
 
 ## Commands
 - Dev server: `setsid bash -c 'cd /home/abinaya/vime/gcare/gcare && npx next dev -p 3000 > /tmp/nextdev.log 2>&1' &`
-- Build check: `npx next build` (passing)
-- Seed: `npx tsx scripts/seed.ts`
-- Migrate: `npx tsx scripts/migrate.ts`
+- Build: `npx next build`
+- Seed: `npx tsx --require dotenv/config scripts/seed.ts`
+- Migrate: `npx tsx --require dotenv/config scripts/migrate.ts`
 
-## Dev Server Note
-- `setsid` needed to keep `next dev` alive (bash tool kills background processes on timeout)
-- Server runs on `http://localhost:3000`
-- SWC version mismatch warning (15.5.21 vs 15.5.22) is harmless
+## Git
+- **Repo**: https://github.com/abinayar2711-sketch/geriacare-frontend
+- **User**: Abinaya Radhakrishnan (abinayar2711@gmail.com)
+- **Branch**: main
+- `.env` is gitignored (secrets protected)
