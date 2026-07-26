@@ -58,6 +58,20 @@ export default function ContactPage() {
         </a>
       </section>
 
+      {/* Email */}
+      <section className={`${card}`}>
+        <h2 className="text-lg font-semibold">Email</h2>
+        <p className="mt-2 text-sm text-[var(--color-muted)]">
+          For detailed questions, partnerships, or feedback — drop us an email.
+        </p>
+        <a
+          href="mailto:support@geriacare.in"
+          className="mt-4 inline-block rounded-full bg-[var(--color-accent)] px-5 py-2.5 text-sm text-white transition hover:opacity-90"
+        >
+          support@geriacare.in
+        </a>
+      </section>
+
       {/* Feedback form */}
       <section className={`${card}`}>
         <h2 className="text-lg font-semibold">Send a Message</h2>
