@@ -76,8 +76,11 @@ export default async function Feed() {
           Observations &amp; Opinions
         </p>
         <h1 className="mt-4 text-4xl leading-[1.15] font-semibold tracking-tight sm:text-5xl">
-          Caring for those who once cared for us
+          Care for Those Who Cared for Us
         </h1>
+        <p className="mt-3 text-sm font-medium uppercase tracking-[0.18em] text-[var(--color-warm)]">
+          The Next Approach
+        </p>
         <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-[var(--color-muted)]">
           Authentic, non-clinical guidance for living well, every day. Connect
           with genuine, sincere caregivers, and insights that are thoughtfully
