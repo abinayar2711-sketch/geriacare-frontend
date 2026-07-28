@@ -72,10 +72,7 @@ export default async function Feed() {
     <div>
       {/* Hero */}
       <section className="mb-12 text-center">
-        <p className="text-xs uppercase tracking-[0.2em] text-[var(--color-accent)]">
-          Observations &amp; Opinions
-        </p>
-        <h1 className="mt-4 text-4xl leading-[1.15] font-semibold tracking-tight sm:text-5xl">
+        <h1 className="text-4xl leading-[1.15] font-semibold tracking-tight sm:text-5xl">
           Care for Those Who Cared for Us
         </h1>
         <p className="mt-3 text-sm font-medium uppercase tracking-[0.18em] text-[var(--color-warm)]">
