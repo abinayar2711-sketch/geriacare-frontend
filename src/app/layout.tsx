@@ -23,8 +23,13 @@ export default async function RootLayout({
         <HelixRails />
         <header className="sticky top-0 z-20 border-b border-[var(--color-line)] bg-[var(--color-paper)]/85 backdrop-blur-sm">
           <nav className="mx-auto flex max-w-3xl items-center gap-5 px-5 py-3.5 text-sm">
-            <Link href="/landing" className="text-lg font-semibold tracking-tight">
-              Geriacare
+            <Link href="/landing" className="flex flex-col leading-none">
+              <span className="text-[1.15rem] font-light uppercase tracking-[0.32em]">
+                Geriacare
+              </span>
+              <span className="mt-0.5 text-[0.55rem] uppercase tracking-[0.18em] text-[var(--color-muted)]">
+                The Next Approach
+              </span>
             </Link>
             <Link
               href="/feed"
