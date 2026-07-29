@@ -79,9 +79,9 @@ export default async function Feed() {
           The Next Approach
         </p>
         <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-[var(--color-muted)]">
-          Authentic, non-clinical guidance for living well, every day. Connect
-          with genuine, sincere caregivers, and insights that are thoughtfully
-          blended, merged and aligned to work well.
+          Non-clinical guidance for living well. Connect with caregivers.
+          A gentle approach to ease the living of seniors. Insights that are
+          thoughtfully blended and aligned to work well.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm">

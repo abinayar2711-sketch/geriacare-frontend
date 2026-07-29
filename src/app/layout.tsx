@@ -7,7 +7,7 @@ import { HelixRails } from "@/components/HelixRails";
 export const metadata: Metadata = {
   title: "Geriacare — Observations and Opinions",
   description:
-    "Authentic, non-clinical guidance for living well, every day. Connect with genuine, sincere caregivers, and insights that are thoughtfully blended, merged and aligned to work well.",
+    "Non-clinical guidance for living well. Connect with caregivers. A gentle approach to ease the living of seniors. Insights that are thoughtfully blended and aligned to work well.",
 };
 
 export default async function RootLayout({
@@ -24,7 +24,7 @@ export default async function RootLayout({
         <header className="sticky top-0 z-20 border-b border-[var(--color-line)] bg-[var(--color-paper)]/85 backdrop-blur-sm">
           <nav className="mx-auto flex max-w-3xl items-center gap-5 px-5 py-3.5 text-sm">
             <Link href="/landing" className="flex flex-col leading-none">
-              <span className="text-[1.15rem] font-light uppercase tracking-[0.32em]">
+              <span className="brand-oc">
                 Geriacare
               </span>
               <span className="mt-0.5 text-[0.55rem] uppercase tracking-[0.18em] text-[var(--color-muted)]">
@@ -33,39 +33,39 @@ export default async function RootLayout({
             </Link>
             <Link
               href="/feed"
-              className="text-[var(--color-muted)] transition hover:text-[var(--color-ink)]"
+              className="nav-pill"
             >
               Forum
             </Link>
             <Link
               href="/ask"
-              className="text-[var(--color-muted)] transition hover:text-[var(--color-ink)]"
+              className="nav-pill"
             >
               Ask
             </Link>
             <Link
               href="/articles"
-              className="text-[var(--color-muted)] transition hover:text-[var(--color-ink)]"
+              className="nav-pill"
             >
               Articles
             </Link>
             {session?.user?.role === "moderator" && (
               <Link
                 href="/caregivers"
-                className="text-[var(--color-muted)] transition hover:text-[var(--color-ink)]"
+                className="nav-pill"
               >
                 Caregivers
               </Link>
             )}
             <Link
               href="/about"
-              className="text-[var(--color-muted)] transition hover:text-[var(--color-ink)]"
+              className="nav-pill"
             >
               About
             </Link>
             <Link
               href="/contact"
-              className="text-[var(--color-muted)] transition hover:text-[var(--color-ink)]"
+              className="nav-pill"
             >
               Contact
             </Link>

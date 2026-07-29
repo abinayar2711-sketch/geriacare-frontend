@@ -24,6 +24,15 @@
   --color-helix-soft: #d4917a;
 
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+
+  /* OpenCode-inspired terminal palette */
+  --color-oc-bg: #0a0a0a;
+  --color-oc-surface: #141414;
+  --color-oc-border: #484848;
+  --color-oc-primary: #fab283;
+  --color-oc-accent: #9d7cd8;
+  --color-oc-text: #eeeeee;
+  --color-oc-muted: #808080;
 }
 
 body {
@@ -330,4 +339,59 @@ body {
   .helix-rail {
     display: none;
   }
+}
+
+/* ------------------------------------------------------------------ *
+ * Tagline float — gentle drift for the hero tagline
+ * ------------------------------------------------------------------ */
+.tagline-float {
+  animation: tagline-drift 4s ease-in-out infinite;
+}
+
+@keyframes tagline-drift {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-4px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tagline-float {
+    animation: none;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Brand mark — OpenCode-inspired terminal style for "Geriacare"
+ * ------------------------------------------------------------------ */
+.brand-oc {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  color: var(--color-oc-primary);
+  text-shadow: 0 0 18px rgba(250, 178, 131, 0.2);
+  transition: text-shadow 0.3s ease;
+}
+.brand-oc:hover {
+  text-shadow: 0 0 28px rgba(250, 178, 131, 0.45);
+}
+
+/* ------------------------------------------------------------------ *
+ * Terminal nav pill — OpenCode-inspired nav links
+ * ------------------------------------------------------------------ */
+.nav-pill {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  color: var(--color-muted);
+  transition: all 0.2s ease;
+}
+.nav-pill:hover {
+  color: var(--color-oc-primary);
+  background: rgba(250, 178, 131, 0.08);
+  text-shadow: 0 0 12px rgba(250, 178, 131, 0.15);
 }

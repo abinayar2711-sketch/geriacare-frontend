@@ -228,7 +228,6 @@ const experts = [
   { initials: "PJ", name: "Dr. Pranav Jain", role: "M.B.B.S, MD" },
   { initials: "S", name: "Srinivasan", role: "Technical Advisor" },
   { initials: "GV", name: "George Varghese", role: "Business Strategist, Geriacare" },
-  { initials: "G", name: "Gangaluru", role: "Advisory Board" },
   { initials: "PG", name: "Prakash George", role: "Physiotherapist" },
 ];
 
@@ -265,14 +264,14 @@ export default function Landing() {
         <div className="relative mx-auto grid w-full max-w-3xl grid-cols-1 items-center gap-8 px-5 py-16 md:grid-cols-[1fr_14rem] md:gap-12 md:py-24">
           <div className="order-2 text-center md:order-1 md:text-left">
             <p className="text-[0.7rem] uppercase tracking-[0.35em] text-[#d4a853]">
-              Quality people, real guidance
+              Care Begins with the Right Mindset
             </p>
-            <h1 className="mt-5 text-4xl leading-[1.08] font-semibold tracking-tight text-[#f4ecdb] sm:text-5xl">
-              Observations and Opinions
+            <h1 className="mt-5 text-4xl leading-[1.08] font-semibold tracking-tight sm:text-5xl">
+              <span className="text-[#d4a853]">GERIA</span><span className="text-[#f4ecdb]">CARE</span>
             </h1>
-            <p className="mt-6 max-w-md text-lg leading-relaxed text-[#c8b89f]">
-              Real questions from real people. Honest answers from those who
-              have been there.
+            <p className="tagline-float mt-6 max-w-md text-lg leading-relaxed text-[#c8b89f]">
+              Real Questions <span className="mx-2 opacity-40">.</span> Gentle Guidance<br />
+              We've been there <span className="mx-2 opacity-40">.</span> We're here to help
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm md:justify-start">
@@ -286,11 +285,12 @@ export default function Landing() {
                 href="/feed"
                 className="rounded-full border border-[#5a3a3a] px-7 py-3 text-[#d4c4a8] transition hover:border-[#d4a853] hover:text-[#d4a853]"
               >
-                Browse the forum
+                Explore conversations
               </Link>
             </div>
             <p className="mt-4 text-xs text-[#8a7a6a]">
-              No account needed to ask
+              No account required.<br />
+              Anonymous questions welcome.
             </p>
           </div>
 
@@ -301,20 +301,31 @@ export default function Landing() {
       </section>
 
       {/* ---------------------------------------------------------------- *
-       * Statement of substance — clean cream band
-       * ---------------------------------------------------------------- */}
+        * Values cards
+        * ---------------------------------------------------------------- */}
       <section className="py-24">
         <span aria-hidden className="block h-px w-12 bg-[#d4a853]/40" />
-        <blockquote className="mt-6 max-w-2xl">
-          <p className="text-[1.4rem] leading-[1.5] font-medium sm:text-[1.75rem] sm:leading-[1.45]">
-            Authentic, non-clinical guidance for living well, every day. Connect
-            with genuine, sincere caregivers, and insights that are thoughtfully
-            blended, merged and aligned to work well.
-          </p>
-          <footer className="mt-6 text-[0.65rem] uppercase tracking-[0.28em] text-[var(--color-muted)]">
-            Observations &amp; Opinions
-          </footer>
-        </blockquote>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2">
+          {[
+            { icon: "🌿", title: "Living Well", desc: "Beyond medical care." },
+            { icon: "🤝", title: "Non-Clinical Guidance", desc: "Support for everyday living." },
+            { icon: "🕊", title: "Human Touch", desc: "Compassionate, gentle approach." },
+            { icon: "💛", title: "Thoughtful Insights", desc: "Helping seniors and families make informed decisions." },
+          ].map((card) => (
+            <div
+              key={card.title}
+              className="group rounded-xl border border-[var(--color-line)] bg-[var(--color-surface)] p-6 transition hover:border-[#d4a853]/40 hover:shadow-[0_4px_20px_rgba(212,168,83,0.06)]"
+            >
+              <span className="block text-2xl">{card.icon}</span>
+              <h3 className="mt-3 text-lg font-semibold tracking-tight text-[var(--color-ink)]">
+                {card.title}
+              </h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-[var(--color-muted)]">
+                {card.desc}
+              </p>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* ---------------------------------------------------------------- *
@@ -326,11 +337,10 @@ export default function Landing() {
             In good hands
           </p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-[#f4ecdb]">
-            Verified experts & caregivers
+            A Diverse Community of Experts
           </h2>
           <p className="mt-2 max-w-lg text-sm leading-relaxed text-[#a89888]">
-            Doctors, specialists, and experienced caregivers who answer with
-            real, practical guidance rooted in years of practice.
+            Bringing together healthcare professionals, caregivers, researchers, entrepreneurs, community leaders and people with lived experience.
           </p>
         </div>
 
@@ -370,11 +380,10 @@ export default function Landing() {
           </div>
           <div className="relative">
             <h2 className="text-3xl font-semibold tracking-tight text-[#f4ecdb]">
-              Ask the community something.
+              Ask the community.
             </h2>
             <p className="mt-3 max-w-lg text-[#a89888]">
-              With a human touch, not algorithms. Real people sharing what
-              they know, with the right mindset to care.
+              Where experience meets compassion, every conversation has a human touch.
             </p>
             <div className="mt-7 flex flex-wrap items-center gap-4 text-sm">
               <Link
