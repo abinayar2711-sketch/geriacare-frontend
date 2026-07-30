@@ -15,9 +15,9 @@ export default function AboutPage() {
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold">Care begins with people.</h2>
         <p className="leading-relaxed text-[var(--color-muted)]">
-          We believe every older adult deserves dignity,
-          every caregiver deserves support,
-          and every family deserves guidance.
+          We believe every older adult needs dignity,
+          every caregiver needs support,
+          and every family needs guidance.
         </p>
       </section>
 
@@ -53,6 +53,18 @@ export default function AboutPage() {
             aged care facilities.
           </li>
         </ul>
+      </section>
+
+      <section className="rounded-lg border border-[var(--color-line)]/40 bg-[var(--color-surface)] p-5 space-y-4">
+        <h2 className="text-xl font-semibold">Medical Disclaimer</h2>
+        <p className="leading-relaxed text-[var(--color-muted)]">
+          The information shared on Geriacare is provided by community members
+          and is not medical advice, diagnosis, or treatment. The content
+          posted reflects individual experience and opinion but does not
+          constitute a doctor-patient relationship. Always consult a
+          qualified healthcare professional for medical concerns about your
+          loved one.
+        </p>
       </section>
 
       <section className="rounded-lg border border-[var(--color-line)]/40 bg-[var(--color-surface)] p-8 text-center">
