@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
+import Reveal from "../../components/Reveal";
 
 /* ------------------------------------------------------------------ *
  * Elder care SVG props — line icons set adrift in the hero
@@ -238,7 +239,7 @@ export default function Landing() {
        * Hero — deep burgundy gradient, gold accents, portrait, props adrift
        * ---------------------------------------------------------------- */}
       <section
-        className="fullbleed relative flex min-h-[36rem] items-center overflow-hidden md:min-h-[46rem]"
+        className="fullbleed relative flex min-h-[30rem] items-center overflow-hidden md:min-h-[46rem]"
         style={{
           background:
             "radial-gradient(70rem 38rem at 50% -8%, #3a2030 0%, rgba(58,32,48,0) 62%)," +
@@ -261,12 +262,12 @@ export default function Landing() {
         </div>
         <HelixWatermark />
 
-        <div className="relative mx-auto grid w-full max-w-3xl grid-cols-1 items-center gap-8 px-5 py-16 md:grid-cols-[1fr_14rem] md:gap-12 md:py-24">
-          <div className="order-2 text-center md:order-1 md:text-left">
+        <div className="relative mx-auto grid w-full max-w-2xl grid-cols-1 items-center gap-8 px-5 py-12 md:grid-cols-[1fr_14rem] md:gap-12 md:py-24">
+          <Reveal className="order-2 text-center md:order-1 md:text-left">
             <p className="text-[0.7rem] uppercase tracking-[0.35em] text-[#d4a853]">
               Care Begins with the Right Mindset
             </p>
-            <h1 className="mt-5 text-4xl leading-[1.08] font-semibold tracking-tight sm:text-5xl">
+            <h1 className="mt-5 text-5xl leading-[1.02] font-semibold tracking-tight sm:text-6xl md:text-7xl">
               <span className="text-[#d4a853]">GERIA</span><span className="text-[#f4ecdb]">CARE</span>
             </h1>
             <p className="tagline-float mt-6 max-w-md text-lg leading-relaxed text-[#c8b89f]">
@@ -274,16 +275,16 @@ export default function Landing() {
               We've been there <span className="mx-2 opacity-40">.</span> We're here to help
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm md:justify-start">
+            <div className="mt-8 flex flex-col items-center gap-3 text-sm md:flex-row md:justify-start md:items-center">
               <Link
                 href="/ask"
-                className="rounded-full bg-[#d4a853] px-7 py-3 font-medium text-[#1e0e18] shadow-[0_6px_20px_rgba(212,168,83,0.3)] transition hover:bg-[#e0bc6a]"
+                className="hero-cta cta-pulse rounded-full bg-[#d4a853] px-6 py-3 sm:px-8 sm:py-4 font-medium text-[#1e0e18] shadow-[0_8px_28px_rgba(212,168,83,0.28)] transition hover:bg-[#e0bc6a] focus-visible:shadow-[0_0_0_4px_rgba(212,168,83,0.18)]"
               >
                 Ask a question
               </Link>
               <Link
                 href="/feed"
-                className="rounded-full border border-[#5a3a3a] px-7 py-3 text-[#d4c4a8] transition hover:border-[#d4a853] hover:text-[#d4a853]"
+                className="rounded-full other bg-[rgba(212,168,83,0.06)] border border-[rgba(212,168,83,0.16)] px-6 py-3 sm:px-8 sm:py-4 text-[#d4a853] transition hover:bg-[rgba(212,168,83,0.10)] hover:border-[rgba(212,168,83,0.28)] md:ml-2"
               >
                 Explore conversations
               </Link>
@@ -292,10 +293,12 @@ export default function Landing() {
               No account required.<br />
               Anonymous questions welcome.
             </p>
-          </div>
+          </Reveal>
 
           <div className="order-1 flex justify-center md:order-2 md:justify-end">
-            <Portrait className="w-44 sm:w-52 md:w-full" />
+            <Reveal className="w-44 sm:w-56 md:w-64">
+              <Portrait className="w-full portrait-interact" />
+            </Reveal>
           </div>
         </div>
       </section>
@@ -394,7 +397,7 @@ export default function Landing() {
               </Link>
               <Link
                 href="/signin"
-                className="text-xs text-[#8a7a6a] underline-offset-4 transition hover:text-[#d4a853] hover:underline"
+                className="nav-pill ml-2 rounded-full bg-[rgba(212,168,83,0.08)] px-3 py-1 text-xs font-semibold text-[#f4ecdb] transition hover:bg-[rgba(212,168,83,0.12)]"
               >
                 Expert / moderator sign-in
               </Link>

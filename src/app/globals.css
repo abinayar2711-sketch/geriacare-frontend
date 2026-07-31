@@ -29,7 +29,7 @@
   --color-oc-bg: #0a0a0a;
   --color-oc-surface: #141414;
   --color-oc-border: #484848;
-  --color-oc-primary: #fab283;
+  --color-oc-primary: #c77f58;
   --color-oc-accent: #9d7cd8;
   --color-oc-text: #eeeeee;
   --color-oc-muted: #808080;
@@ -43,6 +43,10 @@ body {
   color: var(--color-ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Slightly larger base for improved readability */
+  font-size: 17px;
+  line-height: 1.6;
 }
 
 .prose-body p {
@@ -112,12 +116,15 @@ body {
   top: 0;
   bottom: 0;
   left: 50%;
-  width: 60px;
+  /* slightly narrower on mobile to reduce visual weight */
+  width: 48px;
   transform: translateX(-50%);
   pointer-events: none;
-  opacity: 0.18;
-  --spin: 8s;
-  --drop: 20s;
+  /* subtle watermark on mobile */
+  opacity: 0.12;
+  --spin: 10s;
+  --drop: 28s;
+  filter: blur(0.2px);
 }
 @media (prefers-reduced-motion: reduce) {
   .helix-watermark {
@@ -247,7 +254,8 @@ body {
   animation-timing-function: linear, ease-out;
   animation-iteration-count: infinite, infinite;
   animation-delay: calc(var(--i) * -0.3s), calc(var(--i) / var(--n) * var(--drop));
-  opacity: 0.72;
+  /* reduce visual intensity for a subtler background effect */
+  opacity: 0.45;
 }
 
 .helix-rail--right .helix-rung {
@@ -265,7 +273,7 @@ body {
     var(--color-helix-soft) 70%,
     transparent
   );
-  opacity: 0.55;
+  opacity: 0.35;
 }
 
 .helix-dot {
@@ -369,11 +377,134 @@ body {
   font-size: 1.05rem;
   letter-spacing: 0.04em;
   color: var(--color-oc-primary);
-  text-shadow: 0 0 18px rgba(250, 178, 131, 0.2);
+  text-shadow: 0 0 18px rgba(199, 127, 88, 0.18);
   transition: text-shadow 0.3s ease;
 }
 .brand-oc:hover {
-  text-shadow: 0 0 28px rgba(250, 178, 131, 0.45);
+  text-shadow: 0 0 28px rgba(199, 127, 88, 0.36);
+}
+
+/* ------------------------------------------------------------------ *
+ * Hero CTA helper (visual-only) — used on landing page
+ * ------------------------------------------------------------------ */
+.hero-cta {
+  display: inline-block;
+  text-align: center;
+  transition: transform var(--default-transition-duration) var(--default-transition-timing-function),
+    box-shadow var(--default-transition-duration) var(--default-transition-timing-function);
+}
+.hero-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(212, 168, 83, 0.36);
+}
+@media (max-width: 640px) {
+  .hero-cta {
+    display: block;
+    width: 100%;
+  }
+  .other {
+    display: block;
+    width: 100%;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Floating Ask FAB & compact nav helpers
+ * ------------------------------------------------------------------ */
+.fab-ask {
+  position: fixed;
+  right: 1rem;
+  bottom: 1.25rem;
+  z-index: 60;
+  background: var(--color-accent);
+  color: var(--color-paper);
+  border-radius: 999px;
+  padding: 0.9rem 1rem;
+  box-shadow: 0 12px 36px rgba(20, 20, 20, 0.18);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  transition: transform var(--default-transition-duration) var(--default-transition-timing-function),
+    box-shadow var(--default-transition-duration) var(--default-transition-timing-function);
+}
+.fab-ask:hover { transform: translateY(-4px); }
+.fab-ask svg { width: 18px; height: 18px; }
+
+/* mobile: larger full-width FAB */
+@media (max-width: 640px) {
+  .fab-ask { right: 0.6rem; left: 0.6rem; padding: 0.9rem 1rem; border-radius: 12px; }
+}
+
+/* compact nav */
+.nav-compact { gap: 0.75rem; }
+.nav-hidden-sm { display: none; }
+@media (min-width: 768px) { .nav-hidden-sm { display: flex; } }
+
+/* user icon */
+.user-icon {
+  width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px;
+  background: transparent; color: var(--color-muted);
+}
+.user-icon:hover { color: var(--color-ink); }
+
+/* portrait micro-interaction */
+.portrait-interact { transition: transform 260ms var(--default-transition-timing-function), filter 260ms ease; }
+.portrait-interact:hover { transform: scale(1.04) rotate(-2deg); filter: drop-shadow(0 10px 30px rgba(0,0,0,0.25)); }
+@media (prefers-reduced-motion: reduce) { .portrait-interact { transition: none; } }
+
+/* ------------------------------------------------------------------ *
+ * Entrance reveal (intersection observer driven) and CTA pulse
+ * ------------------------------------------------------------------ */
+.reveal { opacity: 0; transform: translateY(12px); transition: opacity 480ms cubic-bezier(.16,.84,.24,1), transform 480ms cubic-bezier(.16,.84,.24,1); will-change: opacity, transform; }
+.reveal.active { opacity: 1; transform: none; }
+
+.cta-pulse { animation: cta-glow 4.2s ease-in-out infinite; }
+.cta-pulse:hover { animation-play-state: paused; }
+
+/* Animate glow only (avoid transform to keep text rendering crisp) */
+@keyframes cta-glow {
+ 0%, 100% { box-shadow: 0 8px 28px rgba(212,168,83,0.28), inset 0 0 0 rgba(0,0,0,0); filter: none; }
+ 50%    { box-shadow: 0 18px 48px rgba(212,168,83,0.36), inset 0 -1px 6px rgba(0,0,0,0.04); filter: brightness(1.02); }
+}
+
+/* Sharpen CTA text and button surface to reduce blurriness */
+.hero-cta, .other {
+ font-weight: 700;
+ -webkit-font-smoothing: antialiased;
+ text-rendering: geometricPrecision;
+ backface-visibility: hidden;
+ transform: translateZ(0);
+ border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Make secondary pill crisper and modern */
+.other {
+ background: transparent;
+ backdrop-filter: blur(2px);
+ border-radius: 999px;
+}
+
+/* subtle portrait floating / breathing animation */
+.portrait-float { animation: portrait-breath 6s ease-in-out infinite; transform-origin: 50% 50%; }
+@keyframes portrait-breath {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-4px) scale(1.02); }
+}
+
+/* animated eyes for SVG portrait variants */
+.portrait-animated .eye { transform-origin: center; animation: eye-blink var(--blink-dur, 6s) steps(1,end) infinite; animation-delay: var(--blink-delay, 0s); }
+@keyframes eye-blink {
+  0%, 4%, 100% { transform: scaleY(1); }
+  2% { transform: scaleY(0.02); }
+}
+
+/* floating helix — slower, subtle */
+.helix-watermark { --spin: 18s; --drop: 36s; opacity: 0.11; }
+.helix-rung { opacity: 0.36; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .cta-pulse, .portrait-float, .portrait-animated .eye { transition: none !important; animation: none !important; }
 }
 
 /* ------------------------------------------------------------------ *
@@ -394,4 +525,12 @@ body {
   color: var(--color-oc-primary);
   background: rgba(250, 178, 131, 0.08);
   text-shadow: 0 0 12px rgba(250, 178, 131, 0.15);
+}
+
+/* active nav state */
+.nav-active {
+  color: var(--color-paper) !important;
+  background: linear-gradient(90deg, rgba(212,168,83,0.98), rgba(199,127,88,0.9));
+  box-shadow: 0 8px 22px rgba(199,127,88,0.18);
+  transform: translateY(-1px);
 }
