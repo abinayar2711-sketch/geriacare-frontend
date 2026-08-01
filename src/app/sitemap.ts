@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { and, desc, eq, inArray } from "drizzle-orm";
 import { db, posts } from "@/db";
 
-const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://geriacare.in";
+const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.geriacare.in";
 
 export const dynamic = "force-dynamic";
 

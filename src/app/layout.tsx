@@ -7,7 +7,7 @@ import SiteNav from "@/components/SiteNav";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://geriacare.in"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.geriacare.in"),
   title: {
     default: "Geriacare — Observations and Opinions",
     template: "%s — Geriacare",
