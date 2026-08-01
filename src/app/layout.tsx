@@ -20,7 +20,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body suppressHydrationWarning className="min-h-screen">
+      <body suppressHydrationWarning className="min-h-dvh">
         <HelixRails />
         <header className="sticky top-0 z-20 border-b border-[var(--color-line)] bg-[var(--color-paper)]/85 backdrop-blur-sm">
           {/* SiteNav is client-side to get current pathname for active link highlighting */}
