@@ -4,11 +4,29 @@ import "./globals.css";
 import { auth, signOut } from "@/auth";
 import { HelixRails } from "@/components/HelixRails";
 import SiteNav from "@/components/SiteNav";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export const metadata: Metadata = {
-  title: "Geriacare — Observations and Opinions",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://geriacare.in"),
+  title: {
+    default: "Geriacare — Observations and Opinions",
+    template: "%s — Geriacare",
+  },
   description:
     "Non-clinical guidance for living well. Connect with caregivers. A gentle approach to ease the living of seniors. Insights that are thoughtfully blended and aligned to work well.",
+  applicationName: "Geriacare",
+  category: "elder care",
+  openGraph: {
+    type: "website",
+    siteName: "Geriacare",
+    title: "Geriacare — Observations and Opinions",
+    description:
+      "Non-clinical guidance for living well. Connect with caregivers. A gentle approach to ease the living of seniors.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default async function RootLayout({
@@ -17,10 +35,12 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const session = await auth();
+  const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
   return (
     <html lang="en">
       <body suppressHydrationWarning className="min-h-dvh">
+        {gaId && <GoogleAnalytics gaId={gaId} />}
         <HelixRails />
         <header className="sticky top-0 z-20 border-b border-[var(--color-line)] bg-[var(--color-paper)]/85 backdrop-blur-sm">
           {/* SiteNav is client-side to get current pathname for active link highlighting */}

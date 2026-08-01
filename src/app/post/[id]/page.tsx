@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { and, asc, countDistinct, desc, eq, sql } from "drizzle-orm";
 import { db, posts, users, endorsements, votes } from "@/db";
 import { auth } from "@/auth";
@@ -23,6 +24,28 @@ import {
 } from "@/lib/ui";
 
 export const dynamic = "force-dynamic";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const [row] = await db
+    .select({ title: posts.title, body: posts.body })
+    .from(posts)
+    .where(eq(posts.id, id));
+  if (!row) return { title: "Geriacare" };
+  return {
+    title: row.title?.trim()
+      ? row.title.trim().slice(0, 60)
+      : "Geriacare",
+    description: row.body
+      ?.replace(/\*\*/g, "")
+      .replace(/\n+/g, " ")
+      .slice(0, 160),
+  };
+}
 
 const URGENCY_LABELS: Record<string, string> = {
   low: "Low urgency",

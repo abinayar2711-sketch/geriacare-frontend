@@ -1,6 +1,13 @@
 import { db, tags } from "@/db";
+import type { Metadata } from "next";
 import { auth } from "@/auth";
 import AskForm from "./AskForm";
+
+export const metadata: Metadata = {
+  title: "Ask a Question",
+  description:
+    "Ask an elder care question. Describe the situation, what you've tried, and what you're asking about — the community and experts will help.",
+};
 
 export const dynamic = "force-dynamic";
 

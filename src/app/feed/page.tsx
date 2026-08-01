@@ -1,6 +1,13 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { desc, eq, and, inArray, sql, count } from "drizzle-orm";
 import { db, posts, users, tags, postTags } from "@/db";
+
+export const metadata: Metadata = {
+  title: "Forum",
+  description:
+    "Ask questions and share answers about elder care. A supportive community for caregivers and families.",
+};
 
 export const revalidate = 30;
 

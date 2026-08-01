@@ -1,5 +1,11 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { auth, signIn } from "@/auth";
+
+export const metadata: Metadata = {
+  title: "Sign in",
+  description: "Sign in to Geriacare to ask questions, share answers, and contribute.",
+};
 
 export const dynamic = "force-dynamic";
 

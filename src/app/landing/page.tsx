@@ -1,6 +1,13 @@
 import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
+import type { Metadata } from "next";
 import Reveal from "../../components/Reveal";
+
+export const metadata: Metadata = {
+  title: { absolute: "Geriacare — Observations and Opinions" },
+  description:
+    "Elder care support and gentle guidance. Ask questions, read expert articles, and connect with caregivers on Geriacare — observations and opinions for living well, every day.",
+};
 
 /* ------------------------------------------------------------------ *
  * Elder care SVG props — line icons set adrift in the hero

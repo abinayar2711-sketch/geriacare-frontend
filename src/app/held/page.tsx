@@ -1,5 +1,9 @@
 import { CrisisBanner } from "@/components/CrisisBanner";
 
+export const metadata = {
+  title: "Post held for review",
+};
+
 export default function HeldPage() {
   return (
     <div className="max-w-lg space-y-6">

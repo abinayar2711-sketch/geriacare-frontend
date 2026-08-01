@@ -1,11 +1,14 @@
 import { redirect } from "next/navigation";
+import type { Metadata } from "next";
 import { like, or, sql } from "drizzle-orm";
 import { db, caregivers } from "@/db";
 import { card } from "@/lib/ui";
 import { auth } from "@/auth";
 
-export const metadata = {
-  title: "Caregivers — Geriacare",
+export const metadata: Metadata = {
+  title: "Caregivers",
+  description:
+    "Search verified caregiver listings — by city and specialization — managed by the Geriacare moderation team.",
 };
 
 export const revalidate = 60;

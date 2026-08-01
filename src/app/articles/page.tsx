@@ -1,7 +1,14 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { desc, eq, and, inArray, sql } from "drizzle-orm";
 import { db, posts, users, tags, postTags } from "@/db";
 import { pill } from "@/lib/ui";
+
+export const metadata: Metadata = {
+  title: "Articles",
+  description:
+    "Care tips and guides on elder care from verified experts — practical guidance from doctors, caregivers, and health professionals.",
+};
 
 export const dynamic = "force-dynamic";
 

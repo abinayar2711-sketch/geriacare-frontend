@@ -1,8 +1,10 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 
-
-export const metadata = {
-  title: "About — Geriacare",
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "About Geriacare — our mission, philosophy, community guidelines, and the people behind the elder care community.",
 };
 
 export default function AboutPage() {

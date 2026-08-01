@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import type { Metadata } from "next";
 import { desc, eq, sql } from "drizzle-orm";
 import { db, posts, users, flags, feedback, caregivers, tags } from "@/db";
 import { auth } from "@/auth";
@@ -10,6 +11,11 @@ import {
   createArticle,
 } from "@/lib/actions";
 import { card, btnPrimary, btnGhost, pill, input, label } from "@/lib/ui";
+
+export const metadata: Metadata = {
+  title: "Moderator",
+  robots: { index: false, follow: false },
+};
 
 export const dynamic = "force-dynamic";
 
