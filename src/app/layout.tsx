@@ -33,13 +33,6 @@ export default async function RootLayout({
           {children}
         </main>
 
-        <Link href="/ask" className="fab-ask" aria-label="Ask a question">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-4 w-4" aria-hidden>
-            <path d="M12 5v14M5 12h14" />
-          </svg>
-          <span className="hidden sm:inline">Ask</span>
-        </Link>
-
         <footer className="relative z-10 mt-16 border-t border-[var(--color-line)] bg-[var(--color-paper)]/80">
           <div className="mx-auto max-w-3xl px-5 py-8 text-xs leading-relaxed text-[var(--color-muted)]">
             <div className="flex flex-wrap gap-x-4 gap-y-1 mb-3">

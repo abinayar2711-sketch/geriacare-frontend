@@ -436,30 +436,6 @@ textarea {
 /* ------------------------------------------------------------------ *
  * Floating Ask FAB & compact nav helpers
  * ------------------------------------------------------------------ */
-.fab-ask {
-  position: fixed;
-  right: 1rem;
-  bottom: calc(1.25rem + env(safe-area-inset-bottom));
-  z-index: 60;
-  background: var(--color-accent);
-  color: var(--color-paper);
-  border-radius: 999px;
-  padding: 0.9rem 1rem;
-  box-shadow: 0 12px 36px rgba(20, 20, 20, 0.18);
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-weight: 600;
-  transition: transform var(--default-transition-duration) var(--default-transition-timing-function),
-    box-shadow var(--default-transition-duration) var(--default-transition-timing-function);
-}
-.fab-ask:hover { transform: translateY(-4px); }
-.fab-ask svg { width: 18px; height: 18px; }
-
-/* mobile: larger full-width FAB */
-@media (max-width: 640px) {
-  .fab-ask { right: 0.6rem; left: 0.6rem; padding: 0.9rem 1rem; border-radius: 12px; }
-}
 
 /* compact nav on small screens — nav links always visible, just tighter */
 @media (max-width: 640px) {

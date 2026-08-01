@@ -48,7 +48,17 @@ export default function SiteNav({ session }: { session?: any }) {
             <span className="hidden sm:inline">Sign out</span>
           </Link>
         ) : (
-          <Link href="/signin" className={`ml-2 shrink-0 whitespace-nowrap rounded-full bg-[var(--color-accent)] px-3 py-1 text-xs font-semibold text-[var(--color-paper)] hover:brightness-95 transition ${path.startsWith("/signin") ? "nav-active" : ""}`}>Sign in</Link>
+          <Link
+            href="/signin"
+            aria-label="Sign in"
+            className={`ml-2 flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full bg-[var(--color-accent)] px-2.5 py-1.5 text-xs font-semibold text-[var(--color-paper)] hover:brightness-95 transition ${path.startsWith("/signin") ? "nav-active" : ""}`}
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-4 w-4" aria-hidden>
+              <circle cx="12" cy="8" r="4" />
+              <path d="M4 21c0-4 4-6 8-6s8 2 8 6" />
+            </svg>
+            <span className="hidden sm:inline">Sign in</span>
+          </Link>
         )}
       </div>
     </nav>
