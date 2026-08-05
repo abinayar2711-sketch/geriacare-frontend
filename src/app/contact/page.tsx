@@ -22,16 +22,25 @@ export default function ContactPage() {
 
   if (submitted) {
     return (
-      <div className={`${card} mt-10 text-center`}>
-        <h1 className="text-2xl font-semibold">Thank you</h1>
-        <p className="mt-3 text-[var(--color-muted)]">
-          Your message has been received. We&apos;ll get back to you soon.
-        </p>
+      <div className="-my-10">
+        <section className="fullbleed theme-golden min-h-[calc(100vh-3.5rem)]">
+          <div className="mx-auto max-w-3xl px-5 py-16">
+            <div className={`${card} mt-10 text-center`}>
+              <h1 className="text-2xl font-semibold">Thank you</h1>
+              <p className="mt-3 text-[var(--color-muted)]">
+                Your message has been received. We&apos;ll get back to you soon.
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
     );
   }
 
   return (
+    <div className="-my-10">
+      <section className="fullbleed theme-golden min-h-[calc(100vh-3.5rem)]">
+        <div className="mx-auto max-w-3xl px-5 py-16">
     <div className="space-y-8">
       <section>
         <h1 className="text-3xl font-semibold tracking-tight">Contact Us</h1>
@@ -52,7 +61,7 @@ export default function ContactPage() {
           href="https://wa.me/919446945807"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-4 inline-block rounded-full bg-[var(--color-accent)] px-5 py-2.5 text-sm text-white transition hover:opacity-90"
+          className="mt-4 inline-block rounded-full bg-[var(--color-accent)] px-5 py-2.5 text-sm text-[var(--color-paper)] transition hover:opacity-90"
         >
           Chat on WhatsApp
         </a>
@@ -66,7 +75,7 @@ export default function ContactPage() {
         </p>
         <a
           href="mailto:support@geriacare.in"
-          className="mt-4 inline-block rounded-full bg-[var(--color-accent)] px-5 py-2.5 text-sm text-white transition hover:opacity-90"
+          className="mt-4 inline-block rounded-full bg-[var(--color-accent)] px-5 py-2.5 text-sm text-[var(--color-paper)] transition hover:opacity-90"
         >
           support@geriacare.in
         </a>
@@ -142,6 +151,9 @@ export default function ContactPage() {
           number immediately. We cannot respond to urgent medical questions
           through this form.
         </p>
+      </section>
+    </div>
+        </div>
       </section>
     </div>
   );

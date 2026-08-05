@@ -9,6 +9,9 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
+    <div className="-my-10">
+      <section className="fullbleed theme-golden min-h-[calc(100vh-3.5rem)]">
+        <div className="mx-auto max-w-3xl px-5 py-16">
     <div className="space-y-10">
       <section>
         <h1 className="text-3xl font-semibold tracking-tight">About GeriaCare</h1>
@@ -76,10 +79,13 @@ export default function AboutPage() {
         </p>
         <Link
           href="/contact"
-          className="mt-5 inline-block rounded-full bg-[var(--color-accent)] px-6 py-3 text-sm text-white transition hover:opacity-90"
+          className="mt-5 inline-block rounded-full bg-[var(--color-accent)] px-6 py-3 text-sm text-[var(--color-paper)] transition hover:opacity-90"
         >
           Contact Us →
         </Link>
+      </section>
+    </div>
+        </div>
       </section>
     </div>
   );
