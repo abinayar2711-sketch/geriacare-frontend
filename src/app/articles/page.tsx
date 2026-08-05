@@ -69,7 +69,7 @@ export default async function ArticlesPage() {
           return (
             <li
               key={a.id}
-              className="group relative overflow-hidden rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] p-5 transition hover:border-[var(--color-warm)]/40 hover:shadow-[0_2px_14px_rgba(27,26,23,0.06)]"
+              className="group relative overflow-hidden rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] p-5 transition hover:border-[var(--color-warm-40)] hover:shadow-[0_2px_14px_rgba(27,26,23,0.06)]"
             >
               <span
                 aria-hidden

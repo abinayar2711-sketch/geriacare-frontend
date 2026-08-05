@@ -39,10 +39,10 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body suppressHydrationWarning className="min-h-dvh">
+      <body suppressHydrationWarning>
         {gaId && <GoogleAnalytics gaId={gaId} />}
         <HelixRails />
-        <header className="sticky top-0 z-20 border-b border-[var(--color-line)] bg-[var(--color-paper)]/85 backdrop-blur-sm">
+        <header className="sticky top-0 z-20 border-b border-[var(--color-line)] bg-[var(--color-paper-85)] backdrop-blur-sm">
           {/* SiteNav is client-side to get current pathname for active link highlighting */}
           <div>
             {/* @ts-ignore */}
@@ -53,7 +53,7 @@ export default async function RootLayout({
           {children}
         </main>
 
-        <footer className="relative z-10 mt-16 border-t border-[var(--color-line)] bg-[var(--color-paper)]/80">
+        <footer className="relative z-10 mt-16 border-t border-[var(--color-line)] bg-[var(--color-paper-80)]">
           <div className="mx-auto max-w-3xl px-5 py-8 text-xs leading-relaxed text-[var(--color-muted)]">
             <div className="flex flex-wrap gap-x-4 gap-y-1 mb-3">
               <Link href="/about" className="hover:text-[var(--color-ink)]">

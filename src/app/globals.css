@@ -1,6 +1,15 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
+/*
+ * Theme tokens as plain CSS custom properties (Tailwind v3).
+ * Components reference these via [var(--color-*)] arbitrary values so the
+ * .theme-golden opt-in dark theme can re-assign them without rebuilding.
+ * Alpha variants exist so opacity modifiers work on legacy Safari (13/14)
+ * which cannot parse color-mix().
+ */
+:root {
   --color-ink: #1b1a17;
   --color-muted: #6b6560;
   --color-line: #e5e0d8;
@@ -33,6 +42,18 @@
   --color-oc-accent: #9d7cd8;
   --color-oc-text: #eeeeee;
   --color-oc-muted: #808080;
+
+  /* Pre-computed alpha variants (legacy-Safari safe) */
+  --color-line-40: rgba(229, 224, 216, 0.4);
+  --color-muted-60: rgba(107, 101, 96, 0.6);
+  --color-muted-70: rgba(107, 101, 96, 0.7);
+  --color-accent-40: rgba(122, 59, 94, 0.4);
+  --color-accent-35: rgba(122, 59, 94, 0.35);
+  --color-accent-soft-60: rgba(243, 228, 237, 0.6);
+  --color-accent-soft-25: rgba(243, 228, 237, 0.25);
+  --color-paper-85: rgba(250, 248, 245, 0.85);
+  --color-paper-80: rgba(250, 248, 245, 0.8);
+  --color-warm-40: rgba(138, 90, 43, 0.4);
 }
 
 body {
@@ -116,6 +137,19 @@ textarea {
   --color-accent-soft: #3a2030;
   --color-sage: #b8c4a8;
   --color-sage-soft: #3a2828;
+
+  /* Alpha variants for the dark theme */
+  --color-line-40: rgba(90, 58, 58, 0.4);
+  --color-muted-60: rgba(200, 184, 159, 0.6);
+  --color-muted-70: rgba(200, 184, 159, 0.7);
+  --color-accent-40: rgba(212, 168, 83, 0.4);
+  --color-accent-35: rgba(212, 168, 83, 0.35);
+  --color-accent-soft-60: rgba(58, 32, 48, 0.6);
+  --color-accent-soft-25: rgba(58, 32, 48, 0.25);
+  --color-paper-85: rgba(250, 248, 245, 0.85);
+  --color-paper-80: rgba(250, 248, 245, 0.8);
+  --color-warm-40: rgba(138, 90, 43, 0.4);
+
   color: var(--color-ink);
   background:
     radial-gradient(60rem 32rem at 50% -10%, #3a2030 0%, rgba(58, 32, 48, 0) 60%),
@@ -526,15 +560,121 @@ textarea {
   transition: all 0.2s ease;
 }
 .nav-pill:hover {
-  color: var(--color-oc-primary);
-  background: rgba(250, 178, 131, 0.08);
-  text-shadow: 0 0 12px rgba(250, 178, 131, 0.15);
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
+  text-shadow: none;
 }
 
 /* active nav state */
 .nav-active {
   color: var(--color-paper) !important;
-  background: linear-gradient(90deg, rgba(212,168,83,0.98), rgba(199,127,88,0.9));
-  box-shadow: 0 8px 22px rgba(199,127,88,0.18);
+  background: linear-gradient(90deg, rgba(122,59,94,0.98), rgba(97,44,76,0.92));
+  box-shadow: 0 8px 22px rgba(122,59,94,0.22);
   transform: translateY(-1px);
+}
+
+/* ------------------------------------------------------------------ *
+ * Spinning question mark — the invitation to ask, made playful
+ * ------------------------------------------------------------------ */
+.ask-mark {
+  perspective: 600px;
+  display: flex;
+  justify-content: center;
+  animation: ask-bob 3.2s ease-in-out infinite;
+}
+
+.ask-mark span {
+  font-size: clamp(3.5rem, 12vw, 6.5rem);
+  line-height: 1;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-shadow: 0 6px 16px rgba(212, 168, 83, 0.28);
+  transform-style: preserve-3d;
+  animation: ask-spin 4s linear infinite;
+}
+
+@keyframes ask-spin {
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes ask-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* If motion is unwelcome, keep the "?" — just stop turning it. */
+@media (prefers-reduced-motion: reduce) {
+  .ask-mark,
+  .ask-mark span {
+    animation: none;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Typing panel
+ *
+ * Only the caret and the status dot need CSS; the typing, the backspace,
+ * and the commit are driven from AskingTypewriter.
+ * ------------------------------------------------------------------ */
+.type-caret {
+  display: inline-block;
+  width: 3px;
+  height: 1.05em;
+  margin-left: 3px;
+  vertical-align: -0.14em;
+  background: var(--color-accent);
+  animation: type-caret-blink 1.06s steps(1, end) infinite;
+}
+
+@keyframes type-caret-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* A slow pulse, not a notification blink — the claim is "this room is
+   awake", not "act now". */
+.type-live-dot {
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  animation: type-live-pulse 2.8s ease-in-out infinite;
+}
+
+@keyframes type-live-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    box-shadow: 0 0 0 0 rgba(212, 168, 83, 0);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 0 4px rgba(212, 168, 83, 0.12);
+  }
+}
+
+/* Without JS the caret would blink beside a sentence that never changes,
+   which promises motion the page can't deliver. */
+@media (prefers-reduced-motion: reduce) {
+  .type-caret,
+  .type-live-dot {
+    animation: none;
+  }
+  .type-caret {
+    opacity: 0.6;
+  }
 }

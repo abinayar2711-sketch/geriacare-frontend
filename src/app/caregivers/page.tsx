@@ -59,13 +59,13 @@ export default async function CaregiversPage({
           name="city"
           defaultValue={city}
           placeholder="City"
-          className="rounded-full border border-[var(--color-line)] bg-[var(--color-surface)] px-4 py-2 text-base transition placeholder:text-[var(--color-muted)]/60 focus:border-[var(--color-accent)] focus:outline-none"
+          className="rounded-full border border-[var(--color-line)] bg-[var(--color-surface)] px-4 py-2 text-base transition placeholder:text-[var(--color-muted-60)] focus:border-[var(--color-accent)] focus:outline-none"
         />
         <input
           name="spec"
           defaultValue={spec}
           placeholder="Specialization"
-          className="rounded-full border border-[var(--color-line)] bg-[var(--color-surface)] px-4 py-2 text-base transition placeholder:text-[var(--color-muted)]/60 focus:border-[var(--color-accent)] focus:outline-none"
+          className="rounded-full border border-[var(--color-line)] bg-[var(--color-surface)] px-4 py-2 text-base transition placeholder:text-[var(--color-muted-60)] focus:border-[var(--color-accent)] focus:outline-none"
         />
         <button
           type="submit"

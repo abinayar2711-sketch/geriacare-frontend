@@ -23,7 +23,7 @@ export default function AboutPage() {
         </p>
       </section>
 
-      <section className="rounded-lg border border-[var(--color-line)]/40 bg-[var(--color-surface)] p-5 space-y-4">
+      <section className="rounded-lg border border-[var(--color-line-40)] bg-[var(--color-surface)] p-5 space-y-4">
         <h2 className="text-xl font-semibold">Mission</h2>
         <p className="leading-relaxed text-[var(--color-muted)]">
           Caring for ageing parents is one of life&apos;s hardest journeys.
@@ -34,7 +34,7 @@ export default function AboutPage() {
         </p>
       </section>
 
-      <section className="rounded-lg border border-[var(--color-line)]/40 bg-[var(--color-surface)] p-5 space-y-4">
+      <section className="rounded-lg border border-[var(--color-line-40)] bg-[var(--color-surface)] p-5 space-y-4">
         <h2 className="text-xl font-semibold">How It Works</h2>
         <ul className="space-y-3 text-[var(--color-muted)]">
           <li>
@@ -57,7 +57,7 @@ export default function AboutPage() {
         </ul>
       </section>
 
-      <section className="rounded-lg border border-[var(--color-line)]/40 bg-[var(--color-surface)] p-5 space-y-4">
+      <section className="rounded-lg border border-[var(--color-line-40)] bg-[var(--color-surface)] p-5 space-y-4">
         <h2 className="text-xl font-semibold">Medical Disclaimer</h2>
         <p className="leading-relaxed text-[var(--color-muted)]">
           The information shared on Geriacare is provided by community members
@@ -69,7 +69,7 @@ export default function AboutPage() {
         </p>
       </section>
 
-      <section className="rounded-lg border border-[var(--color-line)]/40 bg-[var(--color-surface)] p-8 text-center">
+      <section className="rounded-lg border border-[var(--color-line-40)] bg-[var(--color-surface)] p-8 text-center">
         <h2 className="text-xl font-semibold">Still have questions?</h2>
         <p className="mt-2 text-[var(--color-muted)]">
           We&rsquo;re here to help.

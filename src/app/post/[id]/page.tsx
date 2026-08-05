@@ -240,7 +240,7 @@ export default async function PostPage({
                   key={a.post.id}
                   className={`rounded-lg border p-5 ${
                     isExpert
-                      ? "border-[var(--color-accent)]/35 border-l-[3px] border-l-[var(--color-accent)] bg-[var(--color-accent-soft)]/25"
+                      ? "border-[var(--color-accent-35)] border-l-[3px] border-l-[var(--color-accent)] bg-[var(--color-accent-soft-25)]"
                       : "border-[var(--color-line)] bg-[var(--color-surface)]"
                   }`}
                 >
@@ -278,7 +278,7 @@ export default async function PostPage({
                           await endorse(a.post.id, id);
                         }}
                       >
-                        <button className="rounded-full border border-[var(--color-accent)]/40 px-3 py-1 text-[var(--color-accent)] transition hover:bg-[var(--color-accent-soft)]">
+                        <button className="rounded-full border border-[var(--color-accent-40)] px-3 py-1 text-[var(--color-accent)] transition hover:bg-[var(--color-accent-soft)]">
                           Endorse as sound
                         </button>
                       </form>

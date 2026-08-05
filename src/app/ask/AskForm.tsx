@@ -3,6 +3,7 @@
 import { useActionState } from "react";
 import { createQuestion } from "@/lib/actions";
 import { NameField } from "@/components/NameField";
+import AskingTypewriter from "@/components/AskingTypewriter";
 import { btnPrimary, hint, input as field } from "@/lib/ui";
 
 export default function AskForm({
@@ -17,10 +18,33 @@ export default function AskForm({
 
   return (
     <form action={formAction} className="max-w-2xl space-y-5">
+      <div className="ask-mark" aria-hidden="true">
+        <span>?</span>
+      </div>
+
+      <div>
+        <p className="text-xs uppercase tracking-[0.2em] text-[var(--color-accent)]">
+          Ask
+        </p>
+        <h1 className="mt-2 text-3xl font-semibold tracking-tight">
+          Ask a care question
+        </h1>
+        <p className="mt-2 text-[var(--color-muted)]">
+          The more specific you are, the better the answers. &ldquo;My mother
+          is not eating&rdquo; gets sympathy; &ldquo;she stopped eating after
+          her dementia worsened and nothing we try works &mdash; what helped
+          for you?&rdquo; gets an answer.
+        </p>
+      </div>
+
+      {/* Shows the move the paragraph above just asked for — a vague first
+          draft deleted back and replaced with the specific, harder version. */}
+      <AskingTypewriter />
+
       {state?.error && (
         <p
           role="alert"
-          className="rounded-md border-l-[3px] border-[var(--color-accent)] bg-[var(--color-accent-soft)]/60 px-4 py-3 text-sm text-[var(--color-accent)]"
+          className="rounded-md border-l-[3px] border-[var(--color-accent)] bg-[var(--color-accent-soft-60)] px-4 py-3 text-sm text-[var(--color-accent)]"
         >
           {state.error}
         </p>
@@ -173,7 +197,7 @@ export default function AskForm({
           {allTags.map((t) => (
             <label
               key={t.id}
-              className="flex cursor-pointer items-center gap-1.5 rounded-full border border-[var(--color-line)] bg-[var(--color-surface)] px-3 py-1.5 text-xs transition hover:border-[var(--color-accent)] has-checked:border-[var(--color-accent)] has-checked:bg-[var(--color-accent-soft)] has-checked:text-[var(--color-accent)]"
+              className="flex cursor-pointer items-center gap-1.5 rounded-full border border-[var(--color-line)] bg-[var(--color-surface)] px-3 py-1.5 text-xs transition hover:border-[var(--color-accent)] has-[:checked]:border-[var(--color-accent)] has-[:checked]:bg-[var(--color-accent-soft)] has-[:checked]:text-[var(--color-accent)]"
             >
               <input
                 type="checkbox"

@@ -4,7 +4,7 @@
 
 export const input =
   "mt-1 w-full rounded-md border border-[var(--color-line)] bg-[var(--color-surface)] p-3 text-base " +
-  "transition placeholder:text-[var(--color-muted)]/70 focus:border-[var(--color-accent)] focus:outline-none";
+  "transition placeholder:text-[var(--color-muted-70)] focus:border-[var(--color-accent)] focus:outline-none";
 
 export const label = "text-sm font-medium";
 
