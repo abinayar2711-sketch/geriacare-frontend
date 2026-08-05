@@ -39,7 +39,9 @@ export default async function ArticlesPage() {
     : [];
 
   return (
-    <div>
+    <div className="-my-10">
+      <section className="fullbleed theme-golden min-h-[calc(100vh-3.5rem)]">
+        <div className="mx-auto max-w-3xl px-5 py-16">
       <section className="mb-10">
         <p className="text-xs uppercase tracking-[0.2em] text-[var(--color-warm)]">
           Care Tips & Guides
@@ -113,6 +115,8 @@ export default async function ArticlesPage() {
           );
         })}
       </ul>
+        </div>
+      </section>
     </div>
   );
 }

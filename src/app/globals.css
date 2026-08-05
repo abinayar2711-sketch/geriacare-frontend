@@ -137,6 +137,8 @@ textarea {
   --color-accent-soft: #3a2030;
   --color-sage: #b8c4a8;
   --color-sage-soft: #3a2828;
+  --color-warm: #d4a853;
+  --color-warm-soft: #3a2030;
 
   /* Alpha variants for the dark theme */
   --color-line-40: rgba(90, 58, 58, 0.4);
@@ -148,7 +150,7 @@ textarea {
   --color-accent-soft-25: rgba(58, 32, 48, 0.25);
   --color-paper-85: rgba(250, 248, 245, 0.85);
   --color-paper-80: rgba(250, 248, 245, 0.8);
-  --color-warm-40: rgba(138, 90, 43, 0.4);
+  --color-warm-40: rgba(212, 168, 83, 0.4);
 
   color: var(--color-ink);
   background:

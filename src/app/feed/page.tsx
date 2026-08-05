@@ -70,7 +70,9 @@ export default async function Feed() {
   const postsList = rows.slice(0, 20);
 
   return (
-    <div>
+    <div className="-my-10">
+      <section className="fullbleed theme-golden min-h-[calc(100vh-3.5rem)]">
+        <div className="mx-auto max-w-3xl px-5 py-16">
       <section className="mb-12 text-center">
         <h1 className="text-4xl leading-[1.15] font-semibold tracking-tight sm:text-5xl">
           Care for Those<br />Who Cared for Us
@@ -81,7 +83,7 @@ export default async function Feed() {
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm">
           <Link
             href="/ask"
-            className="rounded-full bg-[var(--color-accent)] px-6 py-3 text-white transition hover:opacity-90"
+            className="rounded-full bg-[var(--color-accent)] px-6 py-3 text-[var(--color-paper)] transition hover:opacity-90"
           >
             Ask a question
           </Link>
@@ -205,6 +207,8 @@ export default async function Feed() {
           </ul>
         </section>
       )}
+        </div>
+      </section>
     </div>
   );
 }
