@@ -28,44 +28,44 @@ type Question = {
   meta: string;
 };
 
-/* The questions are illustrative. Response times and answerer counts are
-   the most load-bearing claims on this page — soften or wire them to real
-   data before launch if that matters. */
+/* The questions are illustrative. Response times are the most
+   load-bearing claims on this page — soften or wire them to real data
+   before launch if that matters. */
 const QUESTIONS: Question[] = [
   {
     stem: "My mother won't ",
     draft: "My mother won't eat anything.",
     final:
       "My mother won't eat since her dementia worsened — I'm scared she's giving up. What made meals work for your parent?",
-    meta: "asked at 10:47pm · answered in 3 hours · by 4 people",
+    meta: "asked at 9:30am · answered in 3 hours",
   },
   {
     stem: "My father ",
-    draft: "My father needs round-the-clock care at home.",
+    draft: "My father needs care at home through the day.",
     final:
-      "My father needs help through the night and we can't manage alone at home anymore. How do other families arrange care around the clock?",
-    meta: "asked at 1:12am · answered in 45 minutes · by 6 people",
+      "My father needs help through the day and we can't manage alone at home anymore. How do other families arrange care when they can't be there?",
+    meta: "asked at 11:20am · answered in 45 minutes",
   },
   {
     stem: "My mother ",
     draft: "My mother won't take a bath.",
     final:
       "My mother hasn't bathed in two weeks and fights us when we try to help. What helped with your parents' hygiene?",
-    meta: "asked at 9:50pm · answered in 2 hours · by 4 people",
+    meta: "asked at 5:10pm · answered in 2 hours",
   },
   {
     stem: "How do I ",
     draft: "How do I talk to my mother about her pills?",
     final:
       "How do I tell my mother she must keep taking her pills when she says they make her drowsy and useless?",
-    meta: "asked at 11:58pm · answered before morning · by 3 people",
+    meta: "asked at 8:15am · answered by evening",
   },
   {
     stem: "My mother ",
     draft: "My mother thinks her caregiver is a threat.",
     final:
       "My mother says her caregiver is trying to harm her and keeps asking her to leave. The caregiver is about to quit. How do we save this arrangement?",
-    meta: "asked at 12:40am · answered in 3 hours · by 4 people",
+    meta: "asked at 4:35pm · answered in 3 hours",
   },
 ];
 
