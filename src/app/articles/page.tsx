@@ -7,7 +7,7 @@ import { pill } from "@/lib/ui";
 export const metadata: Metadata = {
   title: "Articles",
   description:
-    "Care tips and guides on elder care from verified experts — practical guidance from doctors, caregivers, and health professionals.",
+    "Care tips and guides from verified experts — practical, human guidance from doctors, caregivers, and health professionals for living well.",
 };
 
 export const dynamic = "force-dynamic";

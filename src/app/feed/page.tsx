@@ -6,7 +6,7 @@ import { db, posts, users, tags, postTags } from "@/db";
 export const metadata: Metadata = {
   title: "Forum",
   description:
-    "Ask questions and share answers about elder care. A supportive community for caregivers and families.",
+    "A supportive elder care community. Ask questions, share answers, and connect with people who understand — for every stage of the caregiving journey.",
 };
 
 export const revalidate = 30;

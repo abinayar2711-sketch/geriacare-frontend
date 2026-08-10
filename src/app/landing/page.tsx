@@ -6,7 +6,7 @@ import Reveal from "../../components/Reveal";
 export const metadata: Metadata = {
   title: { absolute: "Geriacare — Observations and Opinions" },
   description:
-    "Elder care support and gentle guidance. Ask questions, read expert articles, and connect with caregivers on Geriacare — observations and opinions for living well, every day.",
+    "Geriacare is a supportive elder care community. Ask questions, read expert articles, and connect with caregivers — gentle, human guidance for living well, every day.",
 };
 
 /* ------------------------------------------------------------------ *

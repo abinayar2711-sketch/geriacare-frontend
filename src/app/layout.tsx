@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: "%s — Geriacare",
   },
   description:
-    "Non-clinical guidance for living well. Connect with caregivers. A gentle approach to ease the living of seniors. Insights that are thoughtfully blended and aligned to work well.",
+    "Geriacare is a supportive elder care community. Ask questions, read expert articles, and connect with caregivers — gentle, human guidance for living well, every day.",
   applicationName: "Geriacare",
   category: "elder care",
   openGraph: {
@@ -21,7 +21,13 @@ export const metadata: Metadata = {
     siteName: "Geriacare",
     title: "Geriacare — Observations and Opinions",
     description:
-      "Non-clinical guidance for living well. Connect with caregivers. A gentle approach to ease the living of seniors.",
+      "Geriacare is a supportive elder care community. Ask questions, read expert articles, and connect with caregivers — gentle, human guidance for living well, every day.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Geriacare — Observations and Opinions",
+    description:
+      "Geriacare is a supportive elder care community. Ask questions, read expert articles, and connect with caregivers — gentle, human guidance for living well, every day.",
   },
   robots: {
     index: true,
