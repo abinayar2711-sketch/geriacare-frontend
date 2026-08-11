@@ -78,9 +78,20 @@ export default async function RootLayout({
                 Forum
               </Link>
             </div>
-            The information shared here is not medical advice, diagnosis, or
-            treatment. Always consult a qualified healthcare professional for
-            medical concerns.
+            <p>
+              The information shared here is not medical advice, diagnosis, or
+              treatment. Always consult a qualified healthcare professional for
+              medical concerns.
+            </p>
+            <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 border-t border-[var(--color-line)] pt-3">
+              <span>© 2026 Geriacare. All rights reserved.</span>
+              <Link href="/terms" className="hover:text-[var(--color-ink)]">
+                Terms
+              </Link>
+              <Link href="/privacy" className="hover:text-[var(--color-ink)]">
+                Privacy
+              </Link>
+            </div>
           </div>
         </footer>
       </body>

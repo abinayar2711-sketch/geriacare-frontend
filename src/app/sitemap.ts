@@ -31,6 +31,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/about`, priority: 0.7 },
     { url: `${BASE}/contact`, priority: 0.7 },
     { url: `${BASE}/signin`, priority: 0.5 },
+    { url: `${BASE}/terms`, priority: 0.3 },
+    { url: `${BASE}/privacy`, priority: 0.3 },
   ];
 
   const contentPages: MetadataRoute.Sitemap = rows.map((r) => ({
