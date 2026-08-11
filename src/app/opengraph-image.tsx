@@ -133,7 +133,7 @@ export default function OpengraphImage() {
           Real Questions <span style={{ color: "#d4a853", opacity: 0.7 }}>·</span> Gentle Guidance
         </div>
         <div style={{ marginTop: 14, fontSize: 25, color: "#c8b89f" }}>
-          A supportive community for families and caregivers.
+          A warm community for families and caregivers. We have been there.
         </div>
       </div>
     ),
