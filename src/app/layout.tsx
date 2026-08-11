@@ -60,8 +60,15 @@ export default async function RootLayout({
         </main>
 
         <footer className="relative z-10 mt-16 border-t border-[var(--color-line)] bg-[var(--color-paper-80)]">
-          <div className="mx-auto max-w-3xl px-5 py-8 text-xs leading-relaxed text-[var(--color-muted)]">
-            <div className="flex flex-wrap gap-x-4 gap-y-1 mb-3">
+          <div className="mx-auto max-w-3xl px-5 py-10 text-center text-xs leading-relaxed text-[var(--color-muted)]">
+            <div className="flex flex-col items-center leading-none">
+              <span className="brand-oc">Geriacare</span>
+              <span className="mt-1 text-[0.55rem] uppercase tracking-[0.18em]">
+                The Next Approach
+              </span>
+            </div>
+
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
               <Link href="/about" className="hover:text-[var(--color-ink)]">
                 About
               </Link>
@@ -78,16 +85,20 @@ export default async function RootLayout({
                 Forum
               </Link>
             </div>
-            <p>
+
+            <p className="mx-auto mt-4 max-w-md">
               The information shared here is not medical advice, diagnosis, or
               treatment. Always consult a qualified healthcare professional for
               medical concerns.
             </p>
-            <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 border-t border-[var(--color-line)] pt-3">
+
+            <div className="mt-5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 border-t border-[var(--color-line)] pt-4">
               <span>© 2026 Geriacare. All rights reserved.</span>
+              <span aria-hidden>·</span>
               <Link href="/terms" className="hover:text-[var(--color-ink)]">
                 Terms
               </Link>
+              <span aria-hidden>·</span>
               <Link href="/privacy" className="hover:text-[var(--color-ink)]">
                 Privacy
               </Link>
