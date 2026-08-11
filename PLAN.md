@@ -8,9 +8,9 @@ Full Next.js elder care Q&A platform at `/home/abinaya/vime/gcare/gcare/`
 - **Adapted from**: `/home/abinaya/Transfer/Workspace/saturdayHustle/sangha` (spiritual Q&A forum)
 
 ## Branding
-- **Tagline**: "Observations and Opinions"
+- **Tagline**: "The Next Approach"
 - **Sub-tagline**: "Authentic, non-clinical guidance for living well, every day."
-- **Hero headline**: "Observations and Opinions"
+- **Hero headline**: "The Next Approach"
 - **Color palette**: Warm burgundy (#2a1520) + sage (#7a9e7e) + gold (#d4a853)
 - **Accent**: #7a3b5e (burgundy for buttons, badges across all pages)
 - **Contact**: WhatsApp 9446945807, Email support@geriacare.in

@@ -92,7 +92,7 @@ export default function OpengraphImage() {
               textTransform: "uppercase",
             }}
           >
-            Observations &amp; Opinions
+            The Next Approach
           </span>
         </div>
 

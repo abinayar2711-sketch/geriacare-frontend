@@ -9,25 +9,25 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.geriacare.in"),
   title: {
-    default: "Geriacare — Observations and Opinions",
+    default: "Geriacare — The Next Approach",
     template: "%s — Geriacare",
   },
   description:
-    "Geriacare is a supportive elder care community. Ask questions, read expert articles, and connect with caregivers — gentle, human guidance for living well, every day.",
+    "Welcome to a cozy corner of care conversations — ask freely, learn kindly, and share the journey of care, together.",
   applicationName: "Geriacare",
   category: "elder care",
   openGraph: {
     type: "website",
     siteName: "Geriacare",
-    title: "Geriacare — Observations and Opinions",
+    title: "Geriacare — The Next Approach",
     description:
-      "Geriacare is a supportive elder care community. Ask questions, read expert articles, and connect with caregivers — gentle, human guidance for living well, every day.",
+      "Welcome to a cozy corner of care conversations — ask freely, learn kindly, and share the journey of care, together.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Geriacare — Observations and Opinions",
+    title: "Geriacare — The Next Approach",
     description:
-      "Geriacare is a supportive elder care community. Ask questions, read expert articles, and connect with caregivers — gentle, human guidance for living well, every day.",
+      "Welcome to a cozy corner of care conversations — ask freely, learn kindly, and share the journey of care, together.",
   },
   robots: {
     index: true,

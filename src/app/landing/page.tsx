@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 import Reveal from "../../components/Reveal";
 
 export const metadata: Metadata = {
-  title: { absolute: "Geriacare — Observations and Opinions" },
+  title: { absolute: "Geriacare — The Next Approach" },
   description:
-    "Geriacare is a supportive elder care community. Ask questions, read expert articles, and connect with caregivers — gentle, human guidance for living well, every day.",
+    "Welcome to a cozy corner of care conversations — ask freely, learn kindly, and share the journey of care, together.",
 };
 
 /* ------------------------------------------------------------------ *
