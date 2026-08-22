@@ -18,6 +18,7 @@ import {
 } from "@/db";
 import { auth } from "@/auth";
 import { detectCrisis } from "./crisis";
+import { nameFrom, slugify, statusForNewPost } from "./utils";
 
 const AUTO_HIDE_FLAGS = 2;
 const MIN_CONTEXT = 150;
@@ -31,11 +32,6 @@ async function requireUser() {
   const session = await auth();
   if (!session?.user?.id) redirect("/signin");
   return session.user;
-}
-
-function nameFrom(formData: FormData) {
-  const n = String(formData.get("authorName") ?? "").trim().slice(0, 60);
-  return n || null;
 }
 
 async function reporterKeyFor(userId?: string) {
@@ -54,23 +50,6 @@ async function reporterKeyFor(userId?: string) {
 }
 
 const ANON_COOKIE = "geriacare_anon";
-
-function slugify(title: string) {
-  return (
-    title
-      .toLowerCase()
-      .replace(/[^a-z0-9\s-]/g, "")
-      .trim()
-      .replace(/\s+/g, "-")
-      .slice(0, 70) +
-    "-" +
-    Math.random().toString(36).slice(2, 7)
-  );
-}
-
-function statusForNewPost(body: string) {
-  return detectCrisis(body) ? ("needs_review" as const) : ("live" as const);
-}
 
 /* ------------------------------------------------------------------ *
  * Compose
